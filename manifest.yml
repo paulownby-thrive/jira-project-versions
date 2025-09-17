@@ -1,0 +1,25 @@
+modules:
+  jira:projectPage:
+    - key: project-versions-page
+      resource: main
+      render: native
+      title: Versions
+      icon: resource:assets;versions2.svg
+
+resources:
+  - key: main
+    path: src/frontend/index.jsx
+  - key: assets
+    path: assets
+
+app:
+  runtime:
+    name: nodejs22.x
+    memoryMB: 256
+    architecture: arm64
+  id: ari:cloud:ecosystem::app/faae213e-d5a0-4325-814c-5207fc1ef265
+
+permissions:
+  scopes:
+    - manage:jira-project
+    - read:jira-work
